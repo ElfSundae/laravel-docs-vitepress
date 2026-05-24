@@ -10,7 +10,7 @@ on:
         description: 'Show build log?'
         type: boolean
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "17 */6 * * *"
 
 concurrency:
   group: ${{ github.workflow }}
