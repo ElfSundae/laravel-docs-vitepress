@@ -4,13 +4,16 @@ on:
   workflow_dispatch:
     inputs:
       upload_artifacts:
-        description: 'Upload artifacts?'
+        description: "Upload artifacts?"
         type: boolean
       show_log:
-        description: 'Show build log?'
+        description: "Show build log?"
+        type: boolean
+      force_build:
+        description: "Force build?"
         type: boolean
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 * * * *"
 
 concurrency:
   group: ${{ github.workflow }}
@@ -37,13 +40,14 @@ jobs:
         run: ./build.sh
         env:
           SHOW_LOG: ${{ inputs.show_log == true }}
+          FORCE_BUILD: ${{ inputs.force_build == true }}
           GH_TOKEN: ${{ secrets.PAT }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           EDGEONE_TOKEN: ${{ secrets.EDGEONE_TOKEN }}
 
       - name: Upload artifacts
         if: ${{ inputs.upload_artifacts == true }}
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: laravel-docs-dist
           path: .vitepress/dist
