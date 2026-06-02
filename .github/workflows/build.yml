@@ -12,8 +12,13 @@ on:
       force_build:
         description: "Force build?"
         type: boolean
+
+  repository_dispatch:
+    types:
+      - build
+
   schedule:
-    - cron: "30 */2 * * *"
+    - cron: "30 */4 * * *"
 
 concurrency:
   group: ${{ github.workflow }}
