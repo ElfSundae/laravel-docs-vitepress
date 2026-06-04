@@ -16,8 +16,8 @@ on:
   repository_dispatch:
     types:
       - build
-      - en-docs
-      - zh-docs
+      - en-docs-updated
+      - zh-docs-updated
 
   schedule:
     - cron: "30 */4 * * *"
