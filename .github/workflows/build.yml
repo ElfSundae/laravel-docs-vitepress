@@ -36,6 +36,7 @@ jobs:
         with:
           repository: ${{ secrets.REPO }}
           token: ${{ secrets.PAT }}
+          lfs: true
 
       - name: Setup Node
         uses: actions/setup-node@v6
