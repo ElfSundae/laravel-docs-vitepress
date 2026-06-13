@@ -16,8 +16,8 @@ on:
   repository_dispatch:
     types:
       - Project Updated
-      - en-docs-updated
-      - zh-docs-updated
+      - English Docs Updated
+      - Chinese Docs Updated
 
   schedule:
     - cron: "30 */4 * * *"
