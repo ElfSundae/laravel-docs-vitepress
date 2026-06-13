@@ -15,7 +15,7 @@ on:
 
   repository_dispatch:
     types:
-      - build
+      - Project Updated
       - en-docs-updated
       - zh-docs-updated
 
