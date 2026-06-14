@@ -14,10 +14,6 @@ on:
         type: boolean
 
   repository_dispatch:
-    types:
-      - Project Updated
-      - English Docs Updated
-      - Chinese Docs Updated
 
   schedule:
     - cron: "30 */4 * * *"
